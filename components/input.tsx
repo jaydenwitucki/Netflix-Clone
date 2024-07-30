@@ -1,6 +1,6 @@
 import React from "react";
 
-interface InputPrompts {
+interface InputProps {
     id: string;
     onChange: any;
     value: string;
@@ -9,7 +9,7 @@ interface InputPrompts {
 }
 
 
-const Input: React.FC<InputPrompts> = ({
+const Input: React.FC<InputProps> = ({
     id,
     onChange,
     value,
