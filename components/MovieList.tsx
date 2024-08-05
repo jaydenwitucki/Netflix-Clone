@@ -3,12 +3,12 @@ import React from "react";
 import { isEmpty } from 'lodash';
 import MovieCard from "./MovieCard";
 
-interface MoiveListProps {
+interface MovieListProps {
     data: Record<string, any>[];
     title: string,
 }
 
-const MoiveList: React.FC<MoiveListProps> = ({data,title}) => {
+const MovieList: React.FC<MovieListProps> = ({data,title}) => {
 
     if(isEmpty(data)) {
         return null;
@@ -33,4 +33,4 @@ const MoiveList: React.FC<MoiveListProps> = ({data,title}) => {
     )
 }
 
-export default MoiveList;
+export default MovieList;

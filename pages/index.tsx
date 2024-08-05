@@ -1,5 +1,6 @@
 import Billboard from "@/components/Billboard";
-import MoiveList from "@/components/MoiveList";
+import InfoModal from "@/components/InfoModal";
+import MovieList from "@/components/MovieList";
 import Navbar from "@/components/Navbar";
 import useFavorites from "@/hooks/useFavorites";
 import useMovieList from "@/hooks/useMovieList";
@@ -28,14 +29,15 @@ export async function getServerSideProps(context: NextPageContext) {
 export default function Home() {
 
   const { data: movies = [] } = useMovieList();
-  const { data: favorites = [] } = useFavorites();
+  const { data: favorites = []} = useFavorites();
   return (
     <>
+      <InfoModal visible onClose={()=> {}} />
       <Navbar />
       <Billboard />
       <div className="pb-40">
-        <MoiveList title="Trending Now" data = {movies}/>
-        <MoiveList title="My List" data = {favorites}/>
+        <MovieList title="Trending Now" data = {movies}/>
+        <MovieList title="My List" data = {favorites}/>
       </div>
     </>
   );
